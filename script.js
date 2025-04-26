@@ -1,6 +1,11 @@
 const main = document.querySelector("#main");
 function sketch(){
   const ask = window.prompt("Type your choice", '');
+  const num = parseInt(ask);
+  if (num>100){
+    alert("Number should be less than Hundered! Your PC isn't powerful enough to handle more than that.");
+  }
+  else{
   const size = (680/ask)-2;
   const asks = ask*ask;
   console.log(size);
@@ -15,6 +20,7 @@ function sketch(){
     childDivOne.className = "childOne";
     main.appendChild(childDivOne);
   }
+}
 }
 
 const btn = document.querySelector("#start");
