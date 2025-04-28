@@ -1,5 +1,22 @@
 const main = document.querySelector("#main");
-
+const size = (680/16)-2; // 680 width of main div and 2 for the borders
+const asks = 16*16;
+for(let i=0; i<asks; i++){ //generate a div till the i is less than asks 
+      
+  const childDivOne = document.createElement("div");
+    
+    childDivOne.style.width = size+"px"; // changing size by variable
+    childDivOne.style.height = size+"px";
+    
+    childDivOne.addEventListener("mouseover", ()=> {
+        var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
+        childDivOne.style.backgroundColor = "#"+randomColor;
+      })
+     
+    childDivOne.className = "childOne";
+    main.appendChild(childDivOne);
+  }
+  
 function sketch(){ //function that do all the stuff that the page suppose to do
 
   main.innerHTML ="";  // empty the main div
@@ -17,7 +34,7 @@ function sketch(){ //function that do all the stuff that the page suppose to do
     
     for(let i=0; i<asks; i++){ //generate a div till the i is less than asks 
       
-      const childDivOne = document.createElement("div");
+    const childDivOne = document.createElement("div");
       
       childDivOne.style.width = size+"px"; // changing size by variable
       childDivOne.style.height = size+"px";

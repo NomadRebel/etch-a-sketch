@@ -1,11 +1,36 @@
+@font-face {
+  font-family: 'blockFont'; /* Any name you want */
+  src: url('fonts/Unitblock-JpJma.ttf') format('truetype');
+}
 
+body{
+  font-family: 'blockFont', sans-serif;
+  background-color: aqua;
+}
 .heading{
   font-size: 70px;
   display: flex;
   justify-content: center;
   width: auto;
 }
-
+.btn{
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+}
+#start{
+  font-family: 'blockFont', sans-serif;
+  font-size: 30px;
+  background-color: rgb(253, 105, 105);
+  border: none;
+  width: 250px;
+  height: 50px;
+  transition: 250ms;
+}
+#start:hover{
+  cursor: pointer;
+  background-color: rgb(250, 130, 130);
+}
 #main{
   margin: auto;
   border-radius: 4px;
