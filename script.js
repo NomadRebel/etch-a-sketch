@@ -15,8 +15,6 @@ function sketch(){ //function that do all the stuff that the page suppose to do
     const size = (680/ask)-2; // 680 width of main div and 2 for the borders
     const asks = ask*ask; // to make enough number of div
     
-    var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
-    
     for(let i=0; i<asks; i++){ //generate a div till the i is less than asks 
       
       const childDivOne = document.createElement("div");
@@ -25,7 +23,9 @@ function sketch(){ //function that do all the stuff that the page suppose to do
       childDivOne.style.height = size+"px";
       
       childDivOne.addEventListener("mouseover", ()=> {
-        childDivOne.style.backgroundColor = "#"+randomColor; // changing color
+          var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
+          childDivOne.style.backgroundColor = "#"+randomColor; // changing color
+                
       });
       
       
