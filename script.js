@@ -9,13 +9,13 @@ function sketch(){
   else{
     const size = (680/ask)-2;
     const asks = ask*ask;
-    
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
     for(let i=0; i<asks; i++){
       const childDivOne = document.createElement("div");
       childDivOne.style.width = size+"px";
       childDivOne.style.height = size+"px";
       childDivOne.addEventListener("mouseover", ()=> {
-        childDivOne.style.backgroundColor = "black";
+        childDivOne.style.backgroundColor = "#"+randomColor;
       });
       
       childDivOne.className = "childOne";
