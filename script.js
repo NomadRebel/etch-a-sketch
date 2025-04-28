@@ -1,22 +1,33 @@
 const main = document.querySelector("#main");
-function sketch(){
-  main.innerHTML ="";
+
+function sketch(){ //function that do all the stuff that the page suppose to do
+
+  main.innerHTML ="";  // empty the main div
+
   const ask = window.prompt("Type your choice", '');
-  const num = parseInt(ask);
-  if (num>100){
+  const num = parseInt(ask); // convert the string the user inputed to number so we can apply conditions
+
+  if (num>100){ //number should be less than hundered
     alert("Number should be less than Hundered! Your PC isn't powerful enough to handle more than that.");
   }
-  else{
-    const size = (680/ask)-2;
-    const asks = ask*ask;
-    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-    for(let i=0; i<asks; i++){
+
+  else{ // this do everything
+    const size = (680/ask)-2; // 680 width of main div and 2 for the borders
+    const asks = ask*ask; // to make enough number of div
+    
+    var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
+    
+    for(let i=0; i<asks; i++){ //generate a div till the i is less than asks 
+      
       const childDivOne = document.createElement("div");
-      childDivOne.style.width = size+"px";
+      
+      childDivOne.style.width = size+"px"; // changing size by variable
       childDivOne.style.height = size+"px";
+      
       childDivOne.addEventListener("mouseover", ()=> {
-        childDivOne.style.backgroundColor = "#"+randomColor;
+        childDivOne.style.backgroundColor = "#"+randomColor; // changing color
       });
+      
       
       childDivOne.className = "childOne";
       main.appendChild(childDivOne);
