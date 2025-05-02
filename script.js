@@ -11,6 +11,9 @@ for(let i=0; i<asks; i++){ //generate a div till the i is less than asks
     childDivOne.addEventListener("mouseover", ()=> {
         var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
         childDivOne.style.backgroundColor = "#"+randomColor;
+        childDivOne.style.opacity = (parseFloat(childDivOne.style.opacity) || 0) + 0.2;
+        childDivOne.style.transition = "0.1s";
+      
       })
      
     childDivOne.className = "childOne";
@@ -42,7 +45,9 @@ function sketch(){ //function that do all the stuff that the page suppose to do
       childDivOne.addEventListener("mouseover", ()=> {
           var randomColor = Math.floor(Math.random()*16777215).toString(16); // generates random color
           childDivOne.style.backgroundColor = "#"+randomColor; // changing color
-                
+          childDivOne.style.opacity = (parseFloat(childDivOne.style.opacity) || 0) + 0.2;
+          childDivOne.style.transition = "0.1s";
+              
       });
       
       
@@ -54,3 +59,9 @@ function sketch(){ //function that do all the stuff that the page suppose to do
 
 const btn = document.querySelector("#start");
 btn.addEventListener("click",sketch);
+
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", ()=>{
+  childDivOne.style.backgroundColor = "aqua";
+}
+)
